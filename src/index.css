@@ -1,13 +1,425 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Sans:wght@400;500;700&display=swap');
+:root{
+  --main-font: 'Concert One', cursive;
+  --secound-font: 'DM Sans', sans-serif;
+  --main-color: #423F8D;
+  --secound-color: #ED078B;
+  --yellow-color: #FBCE0F;
+  --white-olor: #fff;
+}
+/* ******************************************* navbar ********************************* */
+nav{
+  z-index: 20000;
+}
+.nav-item .nav-link{
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-weight: 300;
+  padding: 20px 4px;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-item .nav-link::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    bottom: 8px;
+    right: 5px;
+    left: 8px;
+    height: 3px;
+    background: var(--secound-color);
+    transition: width 0.3s;
+}
+.nav-item .nav-link.active{
+    color: var(--secound-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-item .nav-link:hover , .nav-item .nav-link:hover::after{
+    color: var(--secound-color);
+    width: 76%;  
 }
+/* ***************************************** main ********************************** */
+.home .main{
+  background-image: url(./Image/background.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.home .main .text{
+    background:var(--white-olor);
+    padding: 100px 100px 70px 100px;
+    border-radius: 90px;
+    margin-top: -35px;
+}
+.home .main .text h1{
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 22px;
+    font-family: var(--main-font);
+    color: var(--main-color);
+}
+.home .main .text h3{
+  font-family: var(--main-font);
+  color: var(--yellow-color);
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.BTN{
+    background: var(--secound-color) !important;
+    font-family: var(--main-font);
+    text-transform: capitalize;
+    padding: 20px 38px !important;
+    color: var(--white-olor) !important;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    position: relative;
+    border: none;
+    overflow: hidden;
+}
+.BTN::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    transition: right 0.5s;
+}
+.BTN:hover:after{
+    right: 0 ;
+}
+/* ***************************************** welcome ********************************** */
+.home .welcome , .teacher{
+    padding: 100px 0;
+}
+.header{
+  text-align: center;
+}
+.header h2{
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    color: var(--main-color);
+    font-family: var(--main-font);
+}
+.header h2 span{
+  color: var(--secound-color);
+}
+.header p{
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-family: var(--secound-font);
+}
+.home .txt h4{
+      font-family: var(--main-font);
+      color: var(--main-color);
+      font-size: 25px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      font-weight: 400;
+}
+.home .txt p{
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--main-color);
+      padding-right: 50px;
+}
+/* ***************************************** offer ********************************** */
+.offer{
+  background-image: url('./Image/offer.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+.card-title{
+  color: var(--main-color);
+  font-weight: 400;
+  font-family: var(--main-font);
+  font-size: 25px;
+}
+.num span{
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--main-font);
+}
+.card-body .txt{
+  font-weight: 400;
+  font-family: var(--secound-font);
+  font-size: 18px;
+}
+.MORE{
+  background: transparent;
+  font-family: var(--main-font);
+  text-transform: capitalize;
+  padding: 20px 38px !important;
+  color: var(--secound-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  position: relative;
+  border: 1px solid var(--secound-color) !important;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.MORE:hover{
+  background-color: var(--secound-color);
+  color: var(--white-olor);
+}
+/* ***************************************** event ********************************** */
+.event{
+  background-image: url('./Image/event.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.event .clock{
+  border-radius: 30px;
+  background-color: var(--white-olor);
+  text-align: center;
+  padding: 60px;
+}
+.event h4{
+  font-size: 25px;
+  font-weight: 400;
+  font-family: var(--main-font);
+  color: var(--secound-color);
+}
+.flip-countdown.size-medium .flip-countdown-piece .flip-countdown-card .flip-countdown-card-sec{
+  font-size: 60px;
+}
+.flip-countdown.size-medium .flip-countdown-piece .flip-countdown-title{
+  font-size: 20px;
+}
+/* ***************************************** teacher ********************************** */
+.layout{
+  position: absolute;
+  top: 0;
+  bottom: 64px;
+  right: 0;
+  left: 0;
+  background-color: rgba(237, 7, 137, 0.4);
+  font-size: 25px;
+  color: var(--white-olor);
+  border-radius: 30px;
+  transition: all 1s;
+  opacity: 0;
+  cursor: pointer;
+}
+.layout i{
+  font-size: 20px;
+  margin-right: 15px;
+  position: relative;
+  top: 60px;
+}
+.info:hover .layout{
+  opacity: 1;
+}
+.teach h3{
+  color: #2c234d;
+  font-weight: 700;
+  font-size: 20px;
+}
+.teach p{
+  line-height: 16px;
+  color: #5E5E5E;
+  font-weight: 400;
+}
+/* ***************************************** test ********************************** */
+.test{
+  background-image: url('./Image/testbg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+.test p{
+  line-height: 1.5;
+  margin: 50px 0;
+  font-size: 22px;
+  color: var(--main-color);
+  font-weight: 400;
+  font-family: var(--secound-color);
+  padding: 0 120px;
+}
+.test i {
+  font-size: 40px;
+  color: var(--secound-color);
+}
+.test h4{
+    color: var(--secound-color);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--main-font);
+  }
+  .test span{
+    color: #57667e;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: var(--secound-color);
+    font-size: 16px;
+  }
+.carousel-indicators [data-bs-target] {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--secound-color);
+}
+.carousel-indicators {
+  bottom: -70px
+}
+/* ***************************************** footer ********************************** */
+.footer{
+  background-color: var(--main-color);
+  padding: 100px 0 25px 0;
+}
+.footer p{
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: var(--secound-font);
+  padding-right: 52px;
+}
+.footer .icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(128,136,255,0.1);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.footer .icon:hover{
+  background-color: var(--secound-color);
+}
+.footer ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+.footer li{
+  margin-bottom: 15px;
+}
+.footer li a{
+  text-decoration: none;
+  color: var(--white-olor);
+  font-weight: 400;
+  font-size: 16px;
+  transition: all 0.5s;
+}
+.footer li:hover a{
+  color: var(--secound-color);
+}
+.footer .headerList{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: var(--main-font);
+}
+.footer .copy{
+  color: var(--white-olor);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2;
+}
+.footer .copy i , .footer .copy strong {
+  color: #12D9DF;
+}
+/* ***************************************** class ********************************** */
+.landing{
+  background-image: url(./Image/hero2.png);
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+.landing h1{
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 1.1;
+  font-family: var(--main-font);
+  color: var(--white-olor);
+}
+.lessons{
+  padding: 100px 0;
+}
+/* ***************************************** blog ********************************** */
+.lessons .card-title{
+  font-size: 30px;
+  margin: 15px 0;
+  font-weight: 600;
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+.lessons .card-text{
+  font-size: 16px;
+  line-height: 30px;
+  font-family: var(--secound-font);
+}
+/* ***************************************** contact ********************************** */
+.contact iframe{
+  width: 100%;
+  height: 450px;
+}
+.contact h2{
+  font-size: 27px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-family: var(--main-font);
+  color: var(--main-color);
+}
+.contact button{
+  border: 1px solid var(--secound-color);
+  color: var(--secound-color);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--secound-font);
+  transition: all 0.5s
+}
+.contact button:hover{
+  background-color: var(--secound-color);
+  color: var(--white-olor);
+}
+.form-control:focus{
+  box-shadow: none;
+  border-color: var(--secound-color);
+}
+.contact h5{
+  font-size: 16px;
+    color: #2a2a2a;
+    font-family: var(--secound-font);
+    font-weight: 400;
+}
+.contact i{
+  color: #999;
+}
+
